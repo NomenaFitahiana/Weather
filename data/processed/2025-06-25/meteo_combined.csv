@@ -1,0 +1,50 @@
+pays,continent,date_extraction,temperature,humidite,pression,description
+Allemagne,Europe,2025-06-25 23:19:26,20.75,66,1012,overcast clouds
+Afghanistan,Asie,2025-06-25 23:19:58,23.12,19,1005,clear sky
+États-Unis,Amérique,2025-06-25 23:19:34,19.92,44,1010,broken clouds
+Espagne,Europe,2025-06-25 23:19:48,26.08,29,1016,clear sky
+Chili,Amérique,2025-06-25 23:20:00,16.01,37,1020,few clouds
+Australie,Océanie,2025-06-25 23:19:38,-0.28,93,1024,clear sky
+Belgique,Europe,2025-06-25 23:19:52,21.48,71,1010,clear sky
+Algérie,Afrique,2025-06-25 23:19:46,24.65,66,1015,clear sky
+Pérou,Amérique,2025-06-25 23:19:59,26.68,63,1014,scattered clouds
+Italie,Europe,2025-06-25 23:19:28,34.86,60,1019,overcast clouds
+Fidji,Océanie,2025-06-25 23:20:04,24.17,84,1016,few clouds
+Iran,Moyen-Orient,2025-06-25 23:20:06,31.06,20,1006,clear sky
+Autriche,Europe,2025-06-25 23:19:50,25.14,52,1013,few clouds
+Pays-Bas,Europe,2025-06-25 23:19:53,20.58,80,1011,broken clouds
+Égypte,Afrique,2025-06-25 23:19:24,28.23,43,1010,clear sky
+Mexique,Amérique,2025-06-25 23:19:58,25.99,89,1010,overcast clouds
+Brésil,Amérique,2025-06-25 23:19:36,25.17,47,1017,scattered clouds
+Israël,Moyen-Orient,2025-06-25 23:19:41,20.99,65,1010,clear sky
+Irak,Moyen-Orient,2025-06-25 23:20:08,36.63,9,997,clear sky
+Cuba,Amérique,2025-06-25 23:20:03,28.02,86,1017,broken clouds
+Norvège,Europe,2025-06-25 23:19:49,18.01,68,1006,clear sky
+Haïti,Amérique,2025-06-25 23:20:02,32.96,42,1014,light rain
+Nigeria,Afrique,2025-06-25 23:19:44,23.86,83,1013,light rain
+Vietnam,Asie,2025-06-25 23:19:54,26.62,92,1005,clear sky
+Nouvelle-Zélande,Océanie,2025-06-25 23:19:39,14.57,78,1017,overcast clouds
+France,Europe,2025-06-25 23:19:25,22.76,84,1010,light rain
+Japon,Asie,2025-06-25 23:19:29,25.54,87,1009,light rain
+Mali,Afrique,2025-06-25 23:19:42,27.72,63,1011,light rain
+Grèce,Europe,2025-06-25 23:19:51,29.15,32,1013,clear sky
+Qatar,Moyen-Orient,2025-06-25 23:20:09,38.38,12,995,scattered clouds
+Chine,Asie,2025-06-25 23:19:31,26.71,53,1006,overcast clouds
+Bolivie,Amérique,2025-06-25 23:20:01,12.07,30,1008,clear sky
+Éthiopie,Afrique,2025-06-25 23:19:47,17.32,53,1016,overcast clouds
+Kenya,Afrique,2025-06-25 23:19:22,14.91,89,1020,few clouds
+Ghana,Afrique,2025-06-25 23:19:45,26.28,80,1014,scattered clouds
+Malaisie,Asie,2025-06-25 23:19:57,28.02,73,1010,overcast clouds
+Turquie,Moyen-Orient,2025-06-25 23:19:40,21.95,30,1015,clear sky
+Philippines,Asie,2025-06-25 23:19:56,26.59,90,1010,overcast clouds
+Afrique du Sud,Afrique,2025-06-25 23:19:24,13.32,35,1017,clear sky
+Canada,Amérique,2025-06-25 23:19:35,28.03,39,1018,clear sky
+Arabie Saoudite,Asie,2025-06-25 23:19:33,34.06,10,1002,overcast clouds
+Papouasie-Nouvelle-Guinée,Océanie,2025-06-25 23:20:04,24.41,91,1011,overcast clouds
+Sénégal,Afrique,2025-06-25 23:19:43,25.2,81,1013,broken clouds
+Royaume-Uni,Europe,2025-06-25 23:19:27,20.59,68,1009,scattered clouds
+Argentine,Amérique,2025-06-25 23:19:37,12.19,50,1013,overcast clouds
+Corée du Sud,Asie,2025-06-25 23:19:54,20.48,98,1008,overcast clouds
+Madagascar,Afrique,2025-06-25 23:19:22,8.71,97,1025,clear sky
+Inde,Asie,2025-06-25 23:19:32,30.83,76,1001,scattered clouds
+Thaïlande,Asie,2025-06-25 23:19:55,29.92,70,1008,overcast clouds
