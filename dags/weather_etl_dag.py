@@ -12,7 +12,7 @@ def transform_data():
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2025, 6, 26),
+    "start_date": datetime(2025, 6, 27),
     "retries": 1,
     "retry_delay": timedelta(minutes=2),
 }
@@ -20,7 +20,7 @@ default_args = {
 with DAG(
     dag_id="weather_etl_dag",
     default_args=default_args,
-    schedule_interval="0 6 * * *",  # tous les jours à 6h du matin
+    schedule='0 10 * * *',  # tous les jours à 10h du matin
     catchup=False,
     description="Extraction et transformation météo",
 ) as dag:
