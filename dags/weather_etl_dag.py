@@ -20,7 +20,7 @@ default_args = {
 with DAG(
     dag_id="weather_etl_dag",
     default_args=default_args,
-    schedule='0 10 * * *',  # tous les jours à 10h du matin
+    schedule='0 19 * * *',  # tous les jours à 22h du matin
     catchup=False,
     description="Extraction et transformation météo",
 ) as dag:
