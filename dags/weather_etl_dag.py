@@ -5,22 +5,22 @@ import os
 
 # Définir les fonctions Python qui appellent tes scripts
 def extract_data():
-    os.system("python scripts/extract.py")
+    os.system("python weather/scripts/extract_current_data.py")
 
 def transform_data():
-    os.system("python scripts/transform.py")
+    os.system("python weather/scripts/transform.py")
 
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2025, 6, 27),
-    "retries": 1,
+    "retries": 3,
     "retry_delay": timedelta(minutes=2),
 }
 
 with DAG(
     dag_id="weather_etl_dag",
     default_args=default_args,
-    schedule='0 19 * * *',  # tous les jours à 22h du matin
+    schedule='@daily',  
     catchup=False,
     description="Extraction et transformation météo",
 ) as dag:
