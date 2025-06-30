@@ -5,10 +5,10 @@ import os
 
 # Définir les fonctions Python qui appellent tes scripts
 def extract_data():
-    os.system("python weather/scripts/extract_current_data.py")
+    os.system("python /home/noums/airflow/dags/weather/scripts/extract_current_data.py")
 
 def transform_data():
-    os.system("python weather/scripts/transform.py")
+    os.system("python /home/noums/airflow/dags/weather/scripts/transform.py")
 
 default_args = {
     "owner": "airflow",
@@ -34,5 +34,7 @@ with DAG(
         task_id="transform_weather_data",
         python_callable=transform_data
     )
+
+    print("Current working directory:", os.getcwd())
 
     extract >> transform
