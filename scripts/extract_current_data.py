@@ -11,7 +11,7 @@ load_dotenv()
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 if not API_KEY:
-    raise ValueError("La clé API est introuvable. Vérifie ton fichier .env.")
+    raise ValueError("Key not found. Check in your .env file.")
 
 cities = [
     {"ville": "Antananarivo", "pays": "Madagascar", "continent": "Afrique"},
@@ -75,8 +75,8 @@ os.makedirs(DATA_DIR, exist_ok=True)
 # Boucle sur chaque ville
 for city in cities:
     try:
-        nom_ville = city["ville"]
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={nom_ville}&appid={API_KEY}&units=metric"
+        name = city["ville"]
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={name}&appid={API_KEY}&units=metric"
 
         response = requests.get(url)
         response.raise_for_status()
@@ -90,7 +90,7 @@ for city in cities:
         date_extraction = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         weather_data = {
-            'ville': nom_ville,
+            'ville': name,
             'pays': city['pays'],
             'continent': city['continent'],
             'date_extraction': date_extraction,
@@ -101,7 +101,7 @@ for city in cities:
         }
 
         # Affichage console
-        print(f"\n--- Données météo pour {nom_ville} ---")
+        print(f"\n--- Weather data for {name} ---")
         print(f"Pays : {city['pays']}")
         print(f"Continent : {city['continent']}")
         print(f"Température : {temperature}°C")
@@ -111,15 +111,15 @@ for city in cities:
         print(f"Date extraction : {date_extraction}")
 
         # Sauvegarde du fichier CSV pour chaque ville
-        safe_filename = nom_ville.replace(" ", "_")  # ex: "New Delhi" → "New_Delhi"
+        safe_filename = name.replace(" ", "_")  # ex: "New Delhi" → "New_Delhi"
         pd.DataFrame([weather_data]).to_csv(
             os.path.join(DATA_DIR, f"meteo_{safe_filename}.csv"),
             index=False
         )
 
     except requests.exceptions.RequestException as e:
-        logging.error(f"Erreur réseau/API pour {nom_ville}: {str(e)}")
+        logging.error(f"Network/API error for {name}: {str(e)}")
     except KeyError as e:
-        logging.error(f"Champ manquant dans la réponse pour {nom_ville}: {str(e)}")
+        logging.error(f"Empty field for {name}: {str(e)}")
     except Exception as e:
-        logging.error(f"Erreur inattendue pour {nom_ville}: {str(e)}")
+        logging.error(f"Unexpected error for {name}: {str(e)}")
