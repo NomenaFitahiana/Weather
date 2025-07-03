@@ -2,13 +2,15 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 import os
+import sys
 
-# Définir les fonctions Python qui appellent tes scripts
-def extract_data():
-    os.system("python /home/noums/airflow/dags/weather/scripts/extract_current_data.py")
+# Ajouter le dossier des scripts au chemin Python
+sys.path.append('/home/noums/airflow/dags/weather/scripts')
 
-def transform_data():
-    os.system("python /home/noums/airflow/dags/weather/scripts/merge_data.py")
+# Importer les fonctions des scripts
+from extract_current_data import extract_weather_data
+from merge_data import merge_weather_data
+from clean_data import clean_weather_data
 
 default_args = {
     "owner": "airflow",
@@ -20,21 +22,25 @@ default_args = {
 with DAG(
     dag_id="weather_etl_dag",
     default_args=default_args,
-    schedule='@daily',  
+    schedule='@daily',
     catchup=False,
-    description="Extraction et transformation météo",
+    description="ETL pipeline for weather data extraction, merging, and cleaning",
 ) as dag:
 
-    extract = PythonOperator(
+    extract_task = PythonOperator(
         task_id="extract_weather_data",
-        python_callable=extract_data
+        python_callable=extract_weather_data
     )
 
-    transform = PythonOperator(
-        task_id="transform_weather_data",
-        python_callable=transform_data
+    merge_task = PythonOperator(
+        task_id="merge_weather_data",
+        python_callable=merge_weather_data
     )
 
-    print("Current working directory:", os.getcwd())
+    clean_task = PythonOperator(
+        task_id="clean_weather_data",
+        python_callable=clean_weather_data
+    )
 
-    extract >> transform
+    # Définir l'ordre des tâches
+    extract_task >> merge_task >> clean_task
