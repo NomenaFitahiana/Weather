@@ -8,7 +8,7 @@ def extract_data():
     os.system("python /home/noums/airflow/dags/weather/scripts/extract_current_data.py")
 
 def transform_data():
-    os.system("python /home/noums/airflow/dags/weather/scripts/transform.py")
+    os.system("python /home/noums/airflow/dags/weather/scripts/merge_data.py")
 
 default_args = {
     "owner": "airflow",
