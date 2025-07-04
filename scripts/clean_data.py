@@ -3,7 +3,7 @@ import os
 
 def clean_weather_data():
     # Charger les données
-    df = pd.read_csv("./../data/processed/weather_data_combined.csv", encoding='utf-8')
+    df = pd.read_csv("/home/noums/airflow/dags/weather/data/processed/weather_data_combined.csv", encoding='utf-8')
 
     # Vérification initiale des données
     print("Dimensions initiales du DataFrame :", df.shape)
@@ -77,7 +77,7 @@ def clean_weather_data():
     print("Dimensions du DataFrame après nettoyage :", df.shape)
 
     # Sauvegarde dans un fichier avec un nom différent pour éviter d'écraser
-    output_path = './../data/processed/cleaned_weather_data.csv'
+    output_path = '/home/noums/airflow/dags/weather/data/processed/cleaned_weather_data.csv'
     df.to_csv(output_path, index=False)
     print(f"Fichier sauvegardé à : {os.path.abspath(output_path)}")
 
